@@ -28,13 +28,15 @@ max_dec = budget_df['Profit/Losses'].min()
 dec_date_row = budget_df.loc[budget_df['Profit/Losses'] == max_dec, 'Date']
 dec_date = dec_date_row.max() #the biggest loser...out of all 1 losers
 
+#determine the average change in profit/loss over the period
+avg_change = (budget_df['Profit/Losses'][num_months-1] - budget_df['Profit/Losses'][0]) / (num_months - 1)
 
 #print to terminal
 print ("Financial Analysis")
 print ("==============================")
 print ("Total Months: {}".format(num_months))
 print ("Total: ${}".format(total_p_l))   #watch out for long, ugly floats!
-print ("Average Change: ${}".format(round(total_p_l / num_months / num_months, 2))) 
+print ("Average Change: ${}".format(round(avg_change, 2))) 
 print ("Greatest Increase in Profits: {} (${})".format(inc_date, max_inc))
 print ("Greatest Decrease in Profits: {} (${})".format(dec_date, max_dec))
 
@@ -49,7 +51,7 @@ with open (file_name, mode = 'w') as text_file:
     text_file.write ("==============================\n")
     text_file.write ("Total Months: {}\n".format(num_months))
     text_file.write ("Total: ${}\n".format(total_p_l)) #who cares about less than a penny?
-    text_file.write ("Average Change: ${}\n".format(round(total_p_l / num_months / num_months, 2))) 
+    text_file.write ("Average Change: ${}\n".format(round(avg_change, 2))) 
     text_file.write ("Greatest Increase in Profits: {} (${})\n".format(inc_date, max_inc))
     text_file.write ("Greatest Decrease in Profits: {} (${})\n".format(dec_date, max_dec))
 
