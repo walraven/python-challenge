@@ -34,8 +34,8 @@ print ("==============================")
 print ("Total Months: {}".format(num_months))
 print ("Total: ${}".format(total_p_l))   #watch out for long, ugly floats!
 print ("Average Change: ${}".format(round(total_p_l / num_months, 2))) 
-print ("Greatest Increase in Profits: {} (${})".format(max_inc, inc_date))
-print ("Greatest Decrease in Profits: {} (${})".format(max_dec, dec_date))
+print ("Greatest Increase in Profits: {} (${})".format(inc_date, max_inc))
+print ("Greatest Decrease in Profits: {} (${})".format(dec_date, max_dec))
 
 #print to txt file
 
