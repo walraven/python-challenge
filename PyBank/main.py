@@ -29,6 +29,7 @@ dec_date_row = budget_df.loc[budget_df['Profit/Losses'] == max_dec, 'Date']
 dec_date = dec_date_row.max() #the biggest loser...out of all 1 losers
 
 #determine the average change in profit/loss over the period
+#avg_change = (last - first) / (count - 1)
 avg_change = (budget_df['Profit/Losses'][num_months-1] - budget_df['Profit/Losses'][0]) / (num_months - 1)
 
 #print to terminal
