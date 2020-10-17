@@ -12,7 +12,7 @@ election_df = pd.read_csv(csv_path)
 results = election_df['Candidate'].value_counts()
 
 #determine the total number of votes cast
-num_votes = results.sum() #stored as variable instead of repeatedly calling
+num_votes = len(election_df)
 
 #display results
 
